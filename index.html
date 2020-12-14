@@ -5,28 +5,30 @@
     </head>
     <body>
         <div id="root">
-            <header>
-                <div id='header__left'>
-                    <div id="logo">COMPANY LOGO</div>
-                    <div>Credibility Review</div>
-                </div>
-                <div id="header__right">
-                    <div id='menu'>
-                        <ul id="menu-1">
-                            <li>Product</li>
-                            <li>Resources</li>
-                        </ul>
-                        <ul id="menu-2">
-                            <li>My Account</li>
-                            <li>Cart(0)</li>
-                        </ul>
+            <div id="header">
+                <header>
+                    <div id='header__left'>
+                        <div id="logo">COMPANY LOGO</div>
+                        <div>Credibility Review</div>
                     </div>
-                    <div id="contact">
-                        <span>Talk to a creadit advisor</span>
-                        <span>1.800.700.2733</span>
+                    <div id="header__right">
+                        <div id='menu'>
+                            <ul id="menu-1">
+                                <li>Product</li>
+                                <li>Resources</li>
+                            </ul>
+                            <ul id="menu-2">
+                                <li>My Account</li>
+                                <li>Cart(0)</li>
+                            </ul>
+                        </div>
+                        <div id="contact">
+                            <span>Talk to a creadit advisor</span>
+                            <span>1.800.700.2733</span>
+                        </div>
                     </div>
-                </div>
-            </header>
+                </header>
+            </div>
             <div id="body-container">
                 <img id="bkg-img" src="./resources/bkg.png">
                 <div id="body-main">
@@ -48,7 +50,7 @@
                         </div>
                         <div id="search-bar__right">
                             <div>
-                                <input type='text' name='search' value="Lorem Ipsum Company"/>
+                                <input type='text' name='search' placeholder="Search"/>
                                 <button id="search-button"><img src="./resources/search.png" alt=""> </button>
                             </div>
                             <div>
@@ -56,32 +58,35 @@
                             </div>
                         </div>
                     </div>
-                    
-                        <div class="slider-holder">
-                            <span id="slider-image-1"></span>
-                            <span id="slider-image-2"></span>
-                            <span id="slider-image-3"></span>
-                            <div class="image-holder">
-                                <img src="./resources/cycle_img1.png" alt="beaker"  class="slider-image" />
-                                <img src="./resources/cycle_img2.png" alt="beaker"  class="slider-image" />
-                                <img src="./resources/cycle_img1.png" alt="beaker"  class="slider-image" />
+
+                    <!-- SLIDER -->
+                    <div id="slider">
+                        <div class="slider__holder">
+                            <span id="slider__slider-image-1"></span>
+                            <span id="slider__slider-image-2"></span>
+                            <span id="slider__slider-image-3"></span>
+                            <div class="slider__image-holder">
+                                <img src="./resources/cycle_img1.png" alt="beaker"  class="slider__slider-image" />
+                                <img src="./resources/cycle_img2.png" alt="beaker"  class="slider__slider-image" />
+                                <img src="./resources/cycle_img1.png" alt="beaker"  class="slider__slider-image" />
                             </div>
                             
                         
                         </div>
-                        <div id='beaker'>
-                        
-                        <div id="bottom-bar">
-                            <span>Glass Beaker and Container</span>
-                            <span>Adaphi Coldstream</span>
-                            <div class="button-holder">
-                                <a href="#slider-image-1" class="slider-change"></a>
-                                <a href="#slider-image-2" class="slider-change"></a>
-                                <a href="#slider-image-3" class="slider-change"></a>
+                        <div id='slider__beaker'>
+                            <div id="slider__bottom-bar">
+                                <span>Glass Beaker and Container</span>
+                                <span>Adaphi Coldstream</span>
+                                <div class="slider__button-holder">
+                                    <a href="#slider__slider-image-1" class="slider__slider-change"></a>
+                                    <a href="#slider__slider-image-2" class="slider__slider-change"></a>
+                                    <a href="#slider__slider-image-3" class="slider__slider-change"></a>
+                                </div>
+                                
                             </div>
-                            
                         </div>
                     </div>
+                        
                     <div id="container">
                         <div id='left'>
                             <ul>
@@ -362,9 +367,23 @@
             
             var span = document.getElementsByClassName("close")[0];
             
+            // SLIDER FUNTIONS
+            var sliderChanges = Array.from(document.querySelectorAll('.slider__slider-change'));
+            var sliderImageHolder = document.querySelector('.slider__image-holder');
+            var shift = 0;
+            var len = sliderChanges.length;
+            sliderChanges.map((sliderChange, inx) => {;
+                sliderChange.addEventListener('click', (e) => {
+                    sliderImageHolder.style.left = `-${shift + inx*1000}px`;
+                    e.preventDefault();
+                })
+            })
+            
+
             function btnClick() {
             modal.style.display = "block";
             }
+
             
             span.onclick = function() {
             modal.style.display = "none";
