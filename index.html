@@ -56,11 +56,30 @@
                             </div>
                         </div>
                     </div>
-                    <div id='beaker'>
-                        <img src="./resources/cycle_img1.png" alt="beaker" />
+                    
+                        <div class="slider-holder">
+                            <span id="slider-image-1"></span>
+                            <span id="slider-image-2"></span>
+                            <span id="slider-image-3"></span>
+                            <div class="image-holder">
+                                <img src="./resources/cycle_img1.png" alt="beaker"  class="slider-image" />
+                                <img src="./resources/cycle_img2.png" alt="beaker"  class="slider-image" />
+                                <img src="./resources/cycle_img1.png" alt="beaker"  class="slider-image" />
+                            </div>
+                            
+                        
+                        </div>
+                        <div id='beaker'>
+                        
                         <div id="bottom-bar">
                             <span>Glass Beaker and Container</span>
                             <span>Adaphi Coldstream</span>
+                            <div class="button-holder">
+                                <a href="#slider-image-1" class="slider-change"></a>
+                                <a href="#slider-image-2" class="slider-change"></a>
+                                <a href="#slider-image-3" class="slider-change"></a>
+                            </div>
+                            
                         </div>
                     </div>
                     <div id="container">
@@ -251,7 +270,7 @@
                                     </div>
                                 <!-- add avideo thumbnail -->  
                                     <div id="tile">
-                                        <div id="thumbnail"><img  src="./resources/play_arrow_small.png" alt=""></div>
+                                        <div id="thumbnail"><img onclick="btnClick()" src="./resources/play_arrow_small.png" alt=""></div>
                                         <div id="tile-content">
                                             <span>Title </span>
                                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing...<a href='watch.html'> watch > </a>
@@ -260,7 +279,7 @@
                                     </div>
                                     <!-- add avideo thumbnail -->
                                     <div id="tile">
-                                        <div id="thumbnail"><img src="./resources/play_arrow_small.png" alt=""></div>
+                                        <div id="thumbnail"><img onclick="btnClick()" src="./resources/play_arrow_small.png" alt=""></div>
                                         <div id="tile-content">
                                             <span>Title </span>
                                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing...<a href='watch.html'> watch > </a>
@@ -269,7 +288,7 @@
                                     </div>
                                     <!-- add a video thumbnail --> 
                                     <div id="tile">
-                                        <div id="thumbnail"><img src="./resources/play_arrow_small.png" alt=""></div>
+                                        <div id="thumbnail"><img onclick="btnClick()" src="./resources/play_arrow_small.png" alt=""></div>
                                         <div id="tile-content">
                                             <span>Title </span>
                                             <span>Lorem ipsum dolor sit amet, consectetur adipiscing...<a href='watch.html'> watch > </a>
